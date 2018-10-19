@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { sendMessage } from '../actions/index'
+import classnames from 'classnames'
 
 class Message extends Component {
     constructor(props) {
@@ -27,7 +28,25 @@ class Message extends Component {
                 />
                 <button onClick={() => this.onSend()}>Send</button>
                 {this.props.message.messageList.map((item, index) => {
-                    return <p key={index}>{item}</p>
+                    return (
+                        <div
+                            className={classnames(
+                                'clearfix',
+                                {
+                                    'sender-you': item.sender === 'You'
+                                },
+                                {
+                                    'sender-bot': item.sender === 'Bot'
+                                }
+                            )}
+                            key={index}
+                        >
+                            <h3 key={index} className="float-left">
+                                {item.message}
+                            </h3>
+                            <p className="float-right">{item.sender}</p>
+                        </div>
+                    )
                 })}
             </div>
         )

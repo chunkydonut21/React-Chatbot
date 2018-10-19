@@ -1,0 +1,13 @@
+.sender-you {
+    background-color: cyan;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 25px;
+}
+
+.sender-bot {
+    background-color: #ffe4c4;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 25px;
+}

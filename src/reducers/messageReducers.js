@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SEND_MESSAGE:
-            return { ...state, messageList: [...state.messageList, action.payload] }
+            return { ...state, messageList: [action.payload, ...state.messageList] }
         default:
             return state
     }
